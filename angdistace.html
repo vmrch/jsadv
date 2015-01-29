@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="myController">
+
+<!--button ng-click="count = count + 1">Click Me!</button-->
+<button ng-click="count1 = count - 10">Click Me!</button>
+<button ng-click="count2 = count + 20">Click Me!</button>
+<button ng-click="count3= count - 31">Click Me!</button>
+
+<p>{{ count }}</p><p>distance from starting is{{ count1 }} kms</p><p>{{ count2 }}</p><p>{{ count3 }}</p>
+
+</div>
+<script>
+function myController($scope) {
+   // alert('please click on start');
+    $scope.count = 1;
+    //alert('please click on start');
+   // $scope.count1 = 12;
+
+}
+</script> 
+
+</body>
+</html>

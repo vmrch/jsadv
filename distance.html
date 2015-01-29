@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span style="color:green;">Please enter a proper valid number</span>
+    <table border="1" width="200">
+        <script>
+            var a = prompt("please enter a number", 0);
+            var b = prompt("please enter  enda number", 0);
+            var c = prompt("please enter  enda number", 0);
+            var d = prompt("please enter  enda number", 0);
+
+            if (isNaN(a))
+            {
+                //document.write('<span style="color:red;">Please enter a proper valid number</span>');
+                alert('please enter proper number');
+               location.reload();
+            }
+            if (isNaN(b))
+            {
+                //document.write('<br /><span style="color:green;">Please enter a proper valid number</span>');
+               alert('please enter proper number');
+                location.reload();
+            }
+            if (isNaN(c))
+            {
+                //document.write('<span style="color:red;">Please enter a proper valid number</span>');
+                alert('please enter proper number');
+               location.reload();
+            }
+            if (isNaN(d))
+            {
+                //document.write('<span style="color:red;">Please enter a proper valid number</span>');
+                alert('please enter proper number');
+               location.reload();
+            }
+
+            if(! isNaN(a)&& !isNaN(b)&& !isNaN(c)&& !isNaN(d)){
+                for (var i = 1; i <= c; i++) {
+                    //document.write(" " + a + " * " + i + " = " + a * i + " ");
+            document.write("<tr><th>" + a + "</th><th>*</th><th>" + i + "</th><th>=</th><th>" + a * i + "</th></tr>");
+                 }
+            }
+            // if(! isNaN(b)&& !isNaN(c)){
+            //     for (var i = 1; i <= b; i++) {
+            //         //document.write(" " + a + " * " + i + " = " + a * i + " ");
+            // document.write("<tr><th>" + a + "</th><th>*</th><th>" + i + "</th><th>=</th><th>" + a * i + "</th></tr>");
+            //      }
+            // }
+            // if(! isNaN(a)&& !isNaN(d)){
+            //     for (var i = 1; i <= b; i++) {
+            //         //document.write(" " + a + " * " + i + " = " + a * i + " ");
+            // document.write("<tr><th>" + a + "</th><th>*</th><th>" + i + "</th><th>=</th><th>" + a * i + "</th></tr>");
+            //      }
+            // }
+            // if(! isNaN(a)&& !isNaN(c)){
+            //     for (var i = 1; i <= b; i++) {
+            //         //document.write(" " + a + " * " + i + " = " + a * i + " ");
+            // document.write("<tr><th>" + a + "</th><th>*</th><th>" + i + "</th><th>=</th><th>" + a * i + "</th></tr>");
+            //      }
+            // }
+            if(! isNaN(b)&& !isNaN(d)){
+                for (var i = 1; i <= b; i++) {
+                    //document.write(" " + a + " * " + i + " = " + a * i + " ");
+            document.write("<tr><th>" + a + "</th><th>*</th><th>" + i + "</th><th>=</th><th>" + a * i + "</th></tr>");
+                 }
+            }
+        </script>
+    </table>
+</body>
+</html>

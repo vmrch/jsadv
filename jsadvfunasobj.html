@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script>
+//calculator
+var calculate = function() {
+     var fn =Array.prototype.pop.apply(arguments);
+      //var fn = arguments.pop();
+        return fn.apply(null, arguments);
+		//return fn(arguments);
+	};
+	var sum =function(x, y){
+		return x+y;
+	},  diff = function(x, y){
+		return x-y;
+	};
+	var sumResult = calculate(1,2, sum),
+	diffResult = calculate(7, 9, diff);
+	alert(sumResult);
+	alert(diffResult);
+
+//another method in calculator
+var calculate = function() {
+     var fn =Array.prototype.pop.apply(arguments);
+      //var fn = arguments.pop();
+        return fn.apply(null, arguments);
+		//return fn(arguments);
+	};
+	var sum =function(){
+		var total = 0;
+		for (var i = 0, l = arguments.length; i < l; i = i + 1) {
+			total = total + arguments[i];
+		}
+		return total;
+	},  diff = function(){
+		var total = 0;
+		for (var i = 0, l = arguments.length; i < l; i = i + 1) {
+			total = total - arguments[0];
+		}
+		return total;
+	};
+	var sumResult = calculate(1,2,4,6,7,8, sum),
+	diffResult = calculate(7, 9, diff);
+	alert(sumResult);
+	alert(diffResult);
+
+//another  diff method in calculator to avoid negative value
+var calculate = function() {
+     var fn =Array.prototype.pop.apply(arguments);
+      //var fn = arguments.pop();
+        return fn.apply(null, arguments);
+		//return fn(arguments);
+	};
+	var sum =function(){
+		var total = 0;
+		for (var i = 0, l = arguments.length; i < l; i = i + 1) {
+			total = total + arguments[i];
+		}
+		return total;
+	},  diff = function(){
+		var total = arguments[0];
+		for (var i = 1, l = arguments.length; i < l; i = i + 1) {
+			total = total - arguments[i];
+		}
+		return total;
+	};
+	var sumResult = calculate(1,2,4,6,7,8, sum),
+	diffResult = calculate(7, 9, diff);
+	alert(sumResult);
+	alert(diffResult);
+
+//anotherone diff method in calculator to avoid negative value
+var calculate = function() {
+     var fn =Array.prototype.pop.apply(arguments);
+      //var fn = arguments.pop();
+        return fn.apply(null, arguments);
+		//return fn(arguments);
+	};
+	var sum =function(){
+		var total = 0;
+		for (var i = 0, l = arguments.length; i < l; i = i + 1) {
+			total = total + arguments[i];
+		}
+		return total;
+	},  diff = function(){
+		var total = Array.prototype.shift.apply(arguments);
+		for (var i = 0, l = arguments.length; i < l; i = i + 1) {
+			total = total - arguments[i];
+		}
+		return total;
+	};
+	var sumResult = calculate(1,2,4,6,7,8, sum),
+	diffResult = calculate(7, 9, 7,20,323, diff);
+	alert(sumResult);
+	alert(diffResult);
+
+
+//apply method
+var obj = {
+	name : "obj object",
+	doSomething: function() {
+		alert(this.name );
+	}
+};
+var foo = { name : "foo object"};
+var bar = { name : "bar object"};
+obj.doSomething();
+obj.doSomething.apply(foo);
+obj.doSomething.apply(bar);
+//another apply method
+var obj = {
+	name : "obj object",
+	doSomething: function(x, y) {
+		alert(this.name + " " + x + " " +y);
+	}
+};
+var foo = { name : "foo object"};
+var bar = { name : "bar object"};
+obj.doSomething( 1, 2);
+obj.doSomething.apply(foo, [1, 3]);
+obj.doSomething.apply(bar, [3, 4]);
+
+// call method
+var obj = {
+	name : "obj object",
+	doSomething: function(x, y) {
+		alert(this.name + " " + x + " " +y);
+	}
+};
+var foo = { name : "foo object"};
+var bar = { name : "bar object"};
+obj.doSomething( 1, 2);
+obj.doSomething.call(foo, [1, 3], 4);
+obj.doSomething.call(bar, [3, "f"], 5, 7 );
+
+</script>
+</body>
+</html>

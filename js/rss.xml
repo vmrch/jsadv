@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version ="2.0">
+<channel>
+	 <title> RSS Sample </title>
+	 <description> Asample RSS Feed </description>
+	 <link> http:// www. some.com</link>
+	 <lastBuildDate> Tue, 12 Feb 2015 13:20:13 </lastBuildDate>
+	 <pubDate>Tue, 12 Feb 2015 13:20:13</pubDate>
+	 <item>
+		 <title> An Item's Title</title>
+		 <description> An item's descriptio</description>
+		 <link> http:// www. some.com</link>
+		 <pubDate>Tue, 12 Feb 2015 13:20:13</pubDate>
+	 </item>
+</channel>
+</rss>

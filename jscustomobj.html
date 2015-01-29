@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script>
+//factory function
+function createPerson(firstName,lastName){
+	return {
+		firstName:firstName,
+		lastName:lastName,
+		getFullName: function() {
+			return this.firstName+ " " + this.lastName;
+		},
+        greet: function (person) {
+        	if (typeof person.getFullName !== "undefined") {
+        	return "Hello, "+person.getFullName();
+            } else {
+        	return "Hello, there!";
+            }
+        }
+	};
+}
+
+var person = createPerson("John", "Doe"),
+person1= createPerson("Jane","Doe");// factory function
+alert(person.greet(person1));
+alert(person.greet({}));
+//alert(person.greet({getFullName : "This is a string"}));
+
+//another method
+var Person = function(firstName,lastName){
+	this. firstName = firstName;
+	this.lastName = lastName;
+
+	    this.getFullName = function() {
+			return this.firstName+ " " + this.lastName;
+	    };
+
+        this.greet = function (person) {
+        	if (person instanceof Person) {
+        	     return "Hello, " + person.getFullName();
+            } else {
+        	return "Hello, there!";
+            }
+        };
+
+}
+var person =  new Person("John", "Doe"),
+person1=  new Person("Jane","Doe");
+alert(person.greet({getFullName : "This is a string"}));
+alert(person.greet(person1));
+
+// one more method to avoid new
+var Person = function(firstName,lastName){
+// this  if 2 line code specifies no need new obj in var, we  may call person directly- 
+	if (this === window) {
+		return new Person(firstName,lastName);
+	}
+	this. firstName = firstName;
+	this.lastName = lastName;
+
+	    this.getFullName = function() {
+			return this.firstName+ " " + this.lastName;
+	    };
+
+        this.greet = function (person) {
+        	if (person instanceof Person) {
+        	     return "Hello, " + person.getFullName();
+            } else {
+        	return "Hello, there!";
+            }
+        };
+
+}
+var person = Person("John", "Doe"),
+person1 = Person("Jane","Doe");
+alert(person.greet({getFullName : "This is a string"}));
+alert(person.greet(person1));
+
+//protypal method
+var Person = function(firstName,lastName){
+	this.firstName = firstName;
+	this.lastName = lastName;
+
+	    Person.prototype.getFullName = function() {
+			return this.firstName+ " " + this.lastName;
+	    };
+
+        Person.prototype.greet = function (person) {
+        	if (person instanceof Person) {
+        	     return "Hello, " + person.getFullName();
+            } else {
+        	return "Hello, there!";
+            }
+        };
+
+}
+var person =  new Person("John", "Doe"),
+person1=  new Person("Jane","Doe");
+alert(person.greet({getFullName : "This is a string"}));
+alert(person.greet(person1));
+
+alert(Date.prototype.getDate);
+// var person ={
+// 	firstName:"John",
+// 	lastName: "Doe",
+// 	getFullName: function(){
+// 		return this.firstName+ " " + this.lastName;
+
+// 	}
+// };
+// var person1 ={
+// 	firstName:"Jane",
+// 	lastName: "Doe",
+// 	getFullName: function(){
+// 		return this.firstName+ " " + this.lastName;
+
+// 	}
+// };
+</script>
+</body>
+</html>

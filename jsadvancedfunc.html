@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script>
+doSomething4();
+function doSomething4(){
+	alert("hello func decl");
+}
+var doSomethingElse = function(){
+  alert("heloo me again");
+};
+doSomething3("hello, world!");
+
+function doSomething3() {
+	var length = arguments.length;
+	alert(arguments);
+	//alert("hello func decl");
+}
+var doSomethingElse = function() {
+  alert("heloo me again");
+};
+doSomething2("hello, world!",2);
+
+function doSomething2() {
+	var length = arguments.length;
+	alert(arguments[1]);
+	//alert("hello func decl");
+}
+var doSomethingElse = function() {
+  alert("heloo me again");
+};
+doSomething("hello, world!");
+
+function doSomething() {
+	var length = arguments.length;
+	alert(arguments[0]);
+	//alert("hello func decl");
+}
+var doSomethingElse = function() {
+  alert("heloo me again");
+};
+function doSomething1(arg1) {
+	return function() {
+		alert(arg1);
+	};
+}
+var fn = doSomething1("hello,closure");
+fn();
+
+function doSomething5(arg2) {
+	var variableOne = "asdf";
+	return function() {
+		alert(arg2);
+	};
+}
+var fn = doSomething5("hello,closure");
+var fn1 = doSomething5("hello,closure 1");
+fn();
+fn1();
+fn();
+
+fn = null;
+//
+var i = 0;
+function nameGen() {
+	var name = "customName" + i;
+	i = i + 1;
+	return name;
+}
+var name = nameGen(),
+  name1 = nameGen();
+
+  alert(name + " " +name1);
+
+var utility = (function() {
+  	var i = 0;
+  	return {
+		nameGen: function() {
+			var name = "customName" + i;
+			i = i + 1;
+			return name;
+		}
+  	}
+ }());
+var name2 = utility. nameGen();
+name3 = utility.nameGen();
+alert(name2 + " " + name3);
+
+</script>
+</body>
+</html>

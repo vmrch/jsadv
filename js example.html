@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+<span id="mySpan">Hello World!</span>
+<script>
+  // function fade(id) {
+  // 	var dom = document.getElementById(id),
+  // 	level =1 ;
+  // 	function step () {
+  // 		var h = level.toString(16);
+  // 		dom.style.backgroundColor = '#FFFF' + h + h ;
+  // 		if (level < 15) {
+  // 			level +=1;
+  // 			setTimeout(step, 100);
+  // 		}
+  // 	}
+  // 	setTimeout(step,100);
+  // }
+  function sum() {
+  	var i,
+  	n = arguments.length,
+  	total = 0;
+  	for (i = 0;i < n; i+= 1) {
+  		total += arguments[i];
+  	}
+  	return total;
+  }
+
+  // for get rid of white spaces in the begining and end of strings
+  String.prototype.trim = function () {
+  	return this.replace (
+  		/^\s*(\S*(\s+\S+)*)\s*$/, "$1");
+  };
+</script>
+</body>
+</html>

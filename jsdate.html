@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<script>
+var date = new Date();
+alert(date);
+var date1 = new Date(1992,5,5);
+alert(date1);//inorder get the exact day of month
+var date2 = new Date(1992,5,8,22,5,24);
+alert(date2);
+var date3 = new Date(19950005000);//wed aug 19 ,1970
+alert(date3);// for unix specific millisec counter for a day--865220700000-sun-jun-1-1997-22-05-00
+var date4 = new Date(19925110000);
+alert(date4.getFullYear());
+var date5 = new Date(19925110000);
+alert(date5.getMonth());
+var date6 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date6.getMonth()];
+alert(month);
+var date7 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date7.getMonth()];
+alert(date7.getDay());
+var date8 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date8.getMonth()];
+	alert(date8.getHours());
+	var date9 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date9.getMonth()];
+	alert(date9.getMinutes());
+	var date10= new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date10.getMonth()];
+	alert(date10.getSeconds());
+	var date11 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date11.getMonth()];
+	alert(date11.getMilliseconds());
+
+var date12 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date12.getMonth()];
+alert(date12.getTime());
+var date13 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date13.getMonth()];
+alert(date13.getTimezoneOffset());
+var date14 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date14.getMonth()];
+alert(date14.getTimezoneOffset()/60);
+var date15 = new Date(19925110000);
+var months =[
+"January","February","March","April","May","June","July","August","September","October","November","December"
+
+];
+var month = months[date15.getUTCMonth()];
+alert(date15.getTimezoneOffset()/60);
+var date16 =new Date(6565320000);//fri,apr,17,1970
+date16.setMonth(3);
+alert(date16);
+var date17 =new Date(6565320000);
+date17.setMonth(date17.getMonth()-1);
+alert(date17);
+var date18 =new Date(6565320000);
+date18.setFullYear(date18.getFullYear()-1);
+alert(date18);
+var date19 =new Date(2000,5,4);
+date19.setDate(date19.getDate()-1);
+alert(date19);
+var date20 =new Date(6565320000);
+ date21 = new Date(2000,4,8,0,0,0,999);
+ //if (date20== date21)
+ if (date20 < date21) {
+ 	alert("date is less than date2");
+ } else {
+ 	alert("date is not less than date2");
+ }
+ var date22 =new Date(6565320000);
+ date23 = new Date(2000,4,8,0,0,0,999);
+ if (date22.getTime() == date23.getTime()) {
+ 	alert("date is less than date2");
+ } else {
+ 	alert("date is not less than date2");
+ }
+ var date24 =new Date(2000,4,8,0,0,0,999);
+ date25 = new Date(2000,4,8,0,0,0,999);
+ if (date24.getTime() === date25.getTime()) {
+ 	alert("date is equal date2");
+ } else {
+ 	alert("date is not less than date2");
+ }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   <form name ="theForm" id = "theForm" action="">
+   Red: <input type="checkbox" name="color" value="red"/>
+   Blue: <input type="checkbox" name="color" value="blue"/>
+   Green: <input type="checkbox" name="color" value="Green"/>
+   Red: <input type="radio" name="color" value="red"/>
+   Blue: <input type="radio" name="color" value="blue"/>
+   Green: <input type="radio" name="color" value="Green"/>
+   <select id = "dayOfWeek" name="dayOfWeek">
+   <option value ="0">Sunday</option>
+   <option value ="1">Monday</option>
+   <option value ="2">Tuesday</option>
+   <option value ="3three">Wednesday</option>
+   <option value ="4">Thursday</option>
+   <option value ="5">Friday</option>
+   <option value ="6">Saturday</option>
+      </select><br />
+   <input type = "text" id = "myTextbox">
+   <textarea id="myTextArea"></textarea>
+   	<input type ="button" id ="myButton" value="Click Me!" />
+   </form>
+   <script src ="js/eventUtility1.js"></script>
+   <script src ="js/script1.js"></script>
+//    <script>
+//    (function() {
+// 	 var form = document.getElementById("theForm",eventUtility);
+// 	   button = form.myButton;
+// 	 eventUtility.addEvent(form,"submit",function(evt){
+//       eventUtility.preventDefault(evt);
+// 	 });
+// 	 //form.submit();
+// 	 //form.reset();
+// 	 eventUtility.addEvent(button, "click", function(evt){
+// 	 	alert("you clicked me!");
+// 	 });
+// }());
+//    </script>
+</body>
+</html>

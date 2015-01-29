@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+<span id="mySpan">Hello World!</span>
+<script>
+// url>fetch>cache>parse>tree>flow> dislay list> paint> pixels
+//netscape 2- flow> paint> event>script
+function () {
+  var template = '<table border="{border}">' + '<tr><th>Last</th><td>{last}</td></tr>' + '<tr><th>Firstt</th><td>{first}</td></tr>' + '<table>';
+  var data = {
+
+      first: "Carol",
+      last: "Hollywood",
+      border: 2
+
+  };
+  mydiv.innerHTML= template.supplant(data);
+}
+// supplants type infront of null or array returns to object 
+String.prototype.supplant = function (o) {
+	return this.replace(/{([^{}]*)}/g,
+         function(a, b) {
+         	var r = o[b];
+         	return typeof r === 'string' ?
+         	r: a;
+         }
+		);
+};
+// for global object
+var global = this;
+// for trivia example
+YAHOO.Trivia = function () {
+	//our common vars and function code here
+	return {
+		getNextPoser: function (cat,diff) {
+
+		},
+		showPoser : function () {
+
+		}
+	};
+}  ();
+//using recursion from child to next child
+function walkTheDOM(node,fun) {
+	func (node);
+	node = node.firstChild;
+	while (node) {
+		walkTheDOM(node ,function);
+		node =node.nextSibling;
+	}
+
+}
+// get elment by claas name
+function getElementByClassName(className){
+
+	var results = [];
+	walkTheDOM(document.body, function (node) {
+       var a ,c = node.className, i;
+       if (c) {
+       	a = c.split('');
+       	for(i=0;i<a.length; i+= 1) {
+       		if (a[i] ===className) {
+       			results.push(node);
+       			break;
+       		}
+       	}
+       }
+	});
+	return results;
+}
+
+//Manipulating images
+
+if (my_image.getAttribute('complete')){
+	my_image.setAttribute('src',superurl);
+}
+//style objects- java interface
+node.className
+node.style.stylename
+node.currentStyle.stylename - only ie
+//not in IE
+document.defaultView().
+  getComputedStyle(node, ""),
+  getPropertyValue(stylename);
+
+  //making elements in java
+  document.createElement(tagName)
+
+  document.createTextNode(text)
+
+  node.cloneNode()
+  Clone an individual element.
+  node.cloneNode(true)
+  clone an element and all of its descendents
+}
+//linking elements
+node.appendChild(new)
+node.insertBefore(new, sibling)
+node.replaceChild(new, old)
+old.parentNode.replaceChild(new, old)
+//remove elements
+node.removeChild(old)
+old.parentNode.removeChild(old)
+//event handlers
+Classic - node["on"+ type] = f;
+Microsoft- node.attachEvent("on" + type, f);-IE only
+W3c- node.addEventListener(type, f, false);
+//html5 boilerplate event handlers
+function (e) {
+	e = e || event;
+	var target = e.target || e.srcElement;
+	...
+}
+//cancel Bubbling
+e.cancelBubble = true;
+if (e.stopPropagation){
+	e.stopPropagation();
+}
+// prevent default action of a specific form
+e.returnValue = false;
+if(e.preventDefault) {
+	e.preventDefault();
+}
+return false;
+//breaking links in the Dom
+function purgeEventHandlers(node) {
+	walkTheDOM(node, function (e) {
+		for (var n in e) {
+			if (typeof e[n] === 'function') {
+				e[n] = null;
+			}
+		}
+	});
+}
+//inter window objects
+frames[]  -- child frames and iframes
+name - textname of window
+self -- reference to this window
+top - reference to outermost
+//script to access another window
+document.domain === otherwindow.document.domain
+//crossbrowser issues
+browser detections - navigator.userAgent Mozilla/4.0
+feature detections-
+ function addEventHandler(node, type ,f) {
+ 	if (node.addEventListener){
+ 		node.addEventListener(type,f,false);
+ 	} else if (node.attachEvent){
+ 		node.attachEvent("on"+ type,  f);
+ 	} else {
+ 		node ["on" + type] = f;
+ 	}
+ }
+ and platform Libraries  - http://deevloper.yahoo.com/yui/
+// prototypal inheritance
+var oldObject = {
+	firstMethod: function () {..},
+	secondMethod: function () {,,}
+},
+var newObject = object(oldObject);
+newObject.thirdMethod = function () {..};
+var myDopplegang = object (newObject);
+myDopplegang.firstMethod();
+//augmentation
+use the oject function, we can produce new objects that have same state and behavior of existing.
+// new operator
+function Constructor() {
+	this.member = initializer;
+	return this; //optional
+}
+Constructor.prototype.firstMethod = function (a, b)
+{..};
+Constructor.prototype.secondMethod = function (c) {..};
+var newObject = new Constructor();
+//function method in methods
+function.prototype.method = function (name, func) {
+	this.prototype[name] = func;
+	return this;
+};
+Constructor.
+method('first_method', function(a, b) {..}),
+method('second_method' ,function (c) {..});
+// psuedo classical inheritance
+function BiggerConstructor() {};
+BiggerConstructor.prototype = new MyConstructor();
+//example psuedo
+function Gizmo(id) {
+	this.id = id;
+}
+Gizmo.prototype.toString = function () {
+	return "gizmo " + this.id;
+};
+
+function Hoozit(id) {
+	this.id = id;
+}
+Hoozit.prototype = new Gizmo ();
+Hoozit.prototype.test = function (id){
+	return this.id ===id;
+};
+//object function
+function object(o) {
+	function F() {}
+	F.prototype = o;
+    return new F();
+}
+newObject = object(oldObject)
+//public methods
+function(string) {
+	return this.member + string;
+}
+//singleton methods
+//YAHOO.MyProperty = function () {}--1
+//or function powerConstructor () {}
+//var that = object(oldObject).---2
+var singleton =function () { --3
+	var privateVariable;
+	function privateFunction(x) {
+		...privateVariable..
+	}
+	return {
+		firstMethod:function(a,b) {
+			...privateVariable...
+		},
+		secondMethod: function (c) {
+			...privateFunction() ...
+		}
+	};//return that; --2
+}();
+//parasitic inheritance
+function symbol (s, p){
+	return {
+		id: s,
+		1bp: p,
+		value: s
+
+	};
+}// basic constructor
+// return constyr
+function delim(s) {
+	return symbol (s, o);
+}
+function stat(s, f) {
+	var x = delim(s);
+	x.identifier = true;
+	x.reserved = true;
+	x.fud =f;
+	return x;
+}
+function blockstmt (s, f) {
+	var x =stmt(s, f);
+	x.block = true;
+	return x;
+}
+//example parasitic
+function gizmo(id){
+	return {
+		id: id,
+		toString: function () {
+			return "gizmo" + this.id;
+		}
+	};
+}
+function hoozit(id) {
+	var that = gizmo(id);
+	that.test = function(testid) {
+		return testid === this.id;
+	};
+	return that;
+}
+//secret of that example
+function gizmo(id){
+	return {
+		//id: id,
+		toString: function () {
+			return "gizmo" + id;
+		}
+	};
+}
+function hoozit(id) {
+	var that = gizmo(id);
+	that.test = function(testid) {
+		return testid === id;
+	};
+	return that;
+}
+//shared secrets
+function gizmo(id,secret){
+	secret = secret ||{};
+	secret.id = id;
+	return {
+		//id: id,
+		toString: function () {
+			return "gizmo" + secret.id;
+		}
+	};
+}
+function hoozit(id) {
+	var secret = {};
+	 that = gizmo(id,secret);
+	that.test = function(testid) {
+		return testid === secret.id;
+	};
+	return that;
+}
+//supermethods
+function hoozit(id) {
+	var secret = {};
+	 that = gizmo(id,secret);
+	 super_toString = that.toString;
+	that.test = function(testid) {
+		return testid === secret.id;
+	};
+	that.toString = function () {
+		return super_toString.apply(that,[]);
+	};
+	return that;
+}
+
+</script>
+</body>
+</html>
